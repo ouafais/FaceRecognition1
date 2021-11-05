@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk&display=swap");
+
+.uploadForm {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Padauk", sans-serif;
+  font-size: 1.2em;
+  border: 5px;
+  display: flex;
+  justify-content: center;
+}
+.textForm {
+  font-weight: 700;
+}
+
+.FormContainer {
+  margin-top: 50px;
+  background-color: #84a59d;
+  padding-bottom: 50px;
+  width: 50%;
+  background: radial-gradient(#f5cac3 3px, transparent 4px),
+    radial-gradient(#f5cac3 3px, transparent 4px),
+    linear-gradient(#84a59d 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #f5cac3 75px,
+      #f5cac3 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #f5cac3 76px,
+      #f5cac3 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #84a59d;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Input-text {
+  margin: 20px;
+  padding: 10px;
+  color: inherit;
+  width: 70%;
+  font-family: inherit;
+  font-size: 0.7em;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.Input-text:focus {
+  outline: none;
+}
+
+button {
+  margin: 10px;
+  outline: none;
+  cursor: pointer;
+}
+.Btndetect {
+  width: 100px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #f28482;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: lighter;
+  background: #f5cac3;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.Btndetect:hover {
+  width: 130px;
+}

@@ -1,0 +1,21 @@
+.imageContainer {
+  text-align: center;
+}
+.postionImage {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.boundingBox {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+}

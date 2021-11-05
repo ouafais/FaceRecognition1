@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+.NavBar {
+  padding: 5px;
+  height: 40px;
+  background-color: #84a59d;
+  font-size: 1.5em;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+
+  background: radial-gradient(#f5cac3 3px, transparent 4px),
+    radial-gradient(#f5cac3 3px, transparent 4px),
+    linear-gradient(#84a59d 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #f5cac3 75px,
+      #f5cac3 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #f5cac3 76px,
+      #f5cac3 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #84a59d;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
