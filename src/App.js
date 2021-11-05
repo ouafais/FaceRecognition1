@@ -17,15 +17,20 @@ const app = new Clarifai.App({
 function App() {
   // declare a new state variable for the input of the image link
   const [inputLink, setinputLink] = useState('');
+  //ONCE the user click on detect we will have this state to show the image on the page
   const [imageUrl, setimageUrl]= useState('');
+  //faceBox is a state where we have the 4 point of the bounding box of the face
   const [faceBox, setfaceBox]= useState({});
   
   // calculateFaceLocation is a function that giving the response from clarifai will calculate the placement of for points frame of the face
   const calculateFaceLocation = (data) =>{
+    //the data is the response of clarifai we extract the for point of face 
     const clarifaiFaceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
+    // the image on our page don't have a fixed width and heught so we have to extract them 
     const image= document.getElementById('imageToDetect');
     const imageWidth = Number(image.width);
     const imageHeight = Number(image.height);
+    //we will calculate the placement of the for point of the bounding box
     return( {
       leftCol : (clarifaiFaceBox.left_col * imageWidth),
       topRow : (clarifaiFaceBox.top_row * imageHeight),
@@ -37,14 +42,17 @@ function App() {
   
   //when we change the window width it will recalculate the frame of the face because the width of picture will change 
   useEffect(()=>{
+    //the change will have to happen just when we have an image shown on the page 
     if(imageUrl) { onButtonSubmit()}
   });
 
   const onButtonSubmit =() =>{
     setimageUrl(inputLink);
+    // we send the image link to the face detection model of clarifai
     app.models
       .predict(Clarifai.FACE_DETECT_MODEL,
         inputLink)
+        //after we get the response of clarifai we have to calculate the placement of the for point of the bounding box and change the state faceBox
       .then(response => setfaceBox(calculateFaceLocation(response)))
       .catch(err => console.log(err));
   };
