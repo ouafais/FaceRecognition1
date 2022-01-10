@@ -10,7 +10,7 @@ import './css/App.css';
 
 //declare the app for clarifai API
 const app = new Clarifai.App({
-  apiKey: '8e7dac5a22c443c680bbd6d133025bd4'
+  apiKey: 'dbeb1da5516048aeabeefa556df86170'
  });
 
 
@@ -24,6 +24,7 @@ function App() {
   
   // calculateFaceLocation is a function that giving the response from clarifai will calculate the placement of for points frame of the face
   const calculateFaceLocation = (data) =>{
+    console.log(data);
     //the data is the response of clarifai we extract the for point of face 
     const clarifaiFaceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
     // the image on our page don't have a fixed width and heught so we have to extract them 
@@ -50,7 +51,7 @@ function App() {
     setimageUrl(inputLink);
     // we send the image link to the face detection model of clarifai
     app.models
-      .predict(Clarifai.FACE_DETECT_MODEL,
+      .predict( "a403429f2ddf4b49b307e318f00e528b",
         inputLink)
         //after we get the response of clarifai we have to calculate the placement of the for point of the bounding box and change the state faceBox
       .then(response => setfaceBox(calculateFaceLocation(response)))
@@ -65,8 +66,7 @@ function App() {
         setinputLink={setinputLink} 
         onButtonSubmit={onButtonSubmit}
         />
-        
-        <FaceRecognition faceBox={faceBox} imageUrl={imageUrl}/>
+      <FaceRecognition faceBox={faceBox} imageUrl={imageUrl}/>
       
     </div>
   );
