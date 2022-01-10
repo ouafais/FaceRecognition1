@@ -24,7 +24,6 @@ function App() {
   
   // calculateFaceLocation is a function that giving the response from clarifai will calculate the placement of for points frame of the face
   const calculateFaceLocation = (data) =>{
-    console.log(data);
     //the data is the response of clarifai we extract the for point of face 
     const clarifaiFaceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
     // the image on our page don't have a fixed width and heught so we have to extract them 
